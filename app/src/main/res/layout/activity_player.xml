@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/BackgroundColor"
+    tools:context=".Activity.ExoPlayerActivity">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/player_ima"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" />
+
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/player_ima2"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+        <ImageView
+            android:background="@drawable/abs_history_playlist"
+            android:backgroundTint="#8D000000"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/exo_icon_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:padding="6dp"
+        android:layout_below="@id/player_ima"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:backgroundTint="?BackgroundColor_S"
+            android:background="@drawable/card_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView_fav_home"
+                    android:layout_width="40dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/image"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_bookmark2"
+                    tools:ignore="ContentDescription,RtlHardcoded,UnknownIdInLayout" />
+
+                <TextView
+                    android:id="@+id/titel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@+id/imageView_fav_home"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:textColor="?attr/Titel_1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingPrefix"
+                    tools:text="@string/app_name" />
+
+
+                <TextView
+                    android:layout_marginBottom="3dp"
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/titel"
+                    android:paddingLeft="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/imageView_fav_home"
+                    android:layout_toEndOf="@+id/views_img"
+                    android:text="0"
+                    android:textColor="?attr/Titel_2"
+                    android:textSize="18sp"
+                    tools:ignore="DuplicateIds,HardcodedText,RtlHardcoded,RtlSymmetry,UnknownIdInLayout" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:id="@+id/adView"
+        android:background="?attr/BackgroundColor"
+        android:backgroundTint="?attr/BackgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_all"
+            android:icon="@drawable/ic_files2"
+            android:title="@string/all_tv" />
+
+        <item
+            android:id="@+id/nav_cat"
+            android:icon="@drawable/ic_files2"
+            android:title="@string/category" />
+
+        <item
+            android:id="@+id/nav_top"
+            android:icon="@drawable/ic_folder_top"
+            android:title="@string/top_10_views" />
+
+        <item
+            android:id="@+id/nav_favourite"
+            android:icon="@drawable/ic_folder_love"
+            android:title="@string/favourite" />
+        <item
+            android:id="@+id/nav_set"
+            android:icon="@drawable/ic_cog"
+            android:title="@string/settings" />
+
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_login"
+            android:title="@string/login" />
+    </group>
+
+
+</menu>

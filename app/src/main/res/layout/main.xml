@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/BackgroundColor"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activity.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="?attr/BackgroundColor"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:title="@string/app_name"
+        app:titleTextColor="?attr/BackgroundTint"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/view_home"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <androidx.core.widget.NestedScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <include layout="@layout/baner"/>
+
+               <RelativeLayout
+                   android:id="@+id/search2"
+                   android:layout_width="match_parent"
+                   android:layout_height="65dp"
+                   android:paddingBottom="2dp"
+                   android:paddingTop="5dp"
+                   android:layout_marginBottom="8dp"
+                   android:layout_marginStart="16dp"
+                   android:layout_marginEnd="16dp">
+
+                   <LinearLayout
+                       android:background="@drawable/cardmy_sh"
+                       android:layout_width="match_parent"
+                       android:layout_height="55dp"
+                       android:paddingStart="8dp"
+                       android:paddingEnd="8dp"
+                       android:layout_marginBottom="5dp"
+                       android:gravity="center_vertical">
+
+                       <EditText
+                           android:layout_marginRight="10dp"
+                           android:layout_marginLeft="10dp"
+                           android:id="@+id/search_view"
+                           android:layout_width="match_parent"
+                           android:layout_height="40dp"
+                           android:layout_weight="1"
+                           android:background="@null"
+                           android:textColor="?Titel_1"
+                           android:textColorHint="?Titel_2"
+                           android:hint="Search Channel Name"
+                           android:inputType="text|textAutoComplete" />
+
+                       <ImageView
+                           android:id="@+id/search"
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:layout_weight="0"
+                           android:padding="5dp"
+                           app:srcCompat="@drawable/ic_loupe_2"/>
+                   </LinearLayout>
+               </RelativeLayout>
+
+               <LinearLayout
+                   android:layout_marginBottom="5dp"
+                   android:id="@+id/view_fav"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/fav"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentTop="true"
+                           android:layout_marginStart="0dp"
+                           android:layout_marginTop="0dp"
+                           android:paddingLeft="12dp"
+                           android:paddingRight="12dp"
+                           android:paddingBottom="0dp"
+                           android:text="@string/favourite"
+                           android:textColor="?Titel_1"
+                           android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                           android:textStyle="bold"
+                           tools:ignore="MissingPrefix" />
+                       <View
+                           android:layout_marginRight="12dp"
+                           android:layout_marginLeft="12dp"
+                           android:layout_marginBottom="12dp"
+                           android:layout_width="55dp"
+                           android:layout_height="2dp"
+                           android:layout_below="@+id/fav"
+                           android:layout_marginTop="2dp"
+                           android:background="#BBE91E63" />
+                       <TextView
+                           android:id="@+id/seeall_fav"
+                           android:paddingBottom="10dp"
+                           android:paddingTop="5dp"
+                           android:paddingLeft="13dp"
+                           android:paddingRight="13dp"
+                           android:background="@drawable/card_home_text"
+                           android:backgroundTint="@color/colorAccent_Light"
+                           android:textStyle="bold"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_alignParentRight="true"
+                           android:textColor="#fff"
+                           android:text="@string/see_all"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                   </RelativeLayout>
+
+
+                   <RelativeLayout
+                       android:layout_marginBottom="5dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <androidx.recyclerview.widget.RecyclerView
+                           android:layout_marginRight="5dp"
+                           android:id="@+id/tv_fav"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"/>
+
+                       <View
+                           android:layout_width="30dp"
+                           android:layout_height="match_parent"
+                           android:layout_alignTop="@+id/tv_fav"
+                           android:layout_alignBottom="@+id/tv_fav"
+                           android:layout_alignParentEnd="true"
+                           android:layout_alignParentRight="true"
+                           android:backgroundTint="?attr/BackgroundColor"
+                           android:background="@drawable/bg_gradient_white" />
+
+                   </RelativeLayout>
+
+
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_marginBottom="5dp"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/latest"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentTop="true"
+                           android:layout_marginStart="0dp"
+                           android:layout_marginTop="0dp"
+                           android:paddingLeft="12dp"
+                           android:paddingRight="12dp"
+                           android:paddingBottom="0dp"
+                           android:text="@string/latest"
+                           android:textColor="?Titel_1"
+                           android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                           android:textStyle="bold"
+                           tools:ignore="MissingPrefix" />
+                       <View
+                           android:layout_marginRight="12dp"
+                           android:layout_marginLeft="12dp"
+                           android:layout_marginBottom="12dp"
+                           android:layout_width="55dp"
+                           android:layout_height="2dp"
+                           android:layout_below="@+id/latest"
+                           android:layout_marginTop="2dp"
+                           android:background="#BBE91E63" />
+                       <TextView
+                           android:id="@+id/seeall_latest"
+                           android:paddingBottom="10dp"
+                           android:paddingTop="5dp"
+                           android:paddingLeft="13dp"
+                           android:paddingRight="13dp"
+                           android:background="@drawable/card_home_text"
+                           android:backgroundTint="@color/colorAccent_Light"
+                           android:textStyle="bold"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_alignParentRight="true"
+                           android:textColor="#fff"
+                           android:text="@string/see_all"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                   </RelativeLayout>
+
+                   <RelativeLayout
+                       android:layout_marginBottom="5dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <androidx.recyclerview.widget.RecyclerView
+                           android:layout_marginRight="5dp"
+                           android:id="@+id/tv_lat"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"/>
+
+                       <View
+                           android:layout_width="30dp"
+                           android:layout_height="match_parent"
+                           android:layout_alignTop="@+id/tv_lat"
+                           android:layout_alignBottom="@+id/tv_lat"
+                           android:layout_alignParentEnd="true"
+                           android:layout_alignParentRight="true"
+                           android:backgroundTint="?attr/BackgroundColor"
+                           android:background="@drawable/bg_gradient_white" />
+
+                   </RelativeLayout>
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_marginBottom="5dp"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/most"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentTop="true"
+                           android:layout_marginStart="0dp"
+                           android:layout_marginTop="0dp"
+                           android:paddingLeft="12dp"
+                           android:paddingRight="12dp"
+                           android:paddingBottom="0dp"
+                           android:text="@string/most"
+                           android:textColor="?Titel_1"
+                           android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                           android:textStyle="bold"
+                           tools:ignore="MissingPrefix" />
+                       <View
+                           android:layout_marginRight="12dp"
+                           android:layout_marginLeft="12dp"
+                           android:layout_marginBottom="12dp"
+                           android:layout_width="55dp"
+                           android:layout_height="2dp"
+                           android:layout_below="@+id/most"
+                           android:layout_marginTop="2dp"
+                           android:background="#BBE91E63" />
+                       <TextView
+                           android:id="@+id/seeall_most"
+                           android:paddingBottom="10dp"
+                           android:paddingTop="5dp"
+                           android:paddingLeft="13dp"
+                           android:paddingRight="13dp"
+                           android:background="@drawable/card_home_text"
+                           android:backgroundTint="@color/colorAccent_Light"
+                           android:textStyle="bold"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_alignParentRight="true"
+                           android:textColor="#fff"
+                           android:text="@string/see_all"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                   </RelativeLayout>
+
+                   <RelativeLayout
+                       android:layout_marginBottom="5dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <androidx.recyclerview.widget.RecyclerView
+                           android:layout_marginRight="5dp"
+                           android:id="@+id/tv_most"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"/>
+
+                       <View
+                           android:layout_width="30dp"
+                           android:layout_height="match_parent"
+                           android:layout_alignTop="@+id/tv_most"
+                           android:layout_alignBottom="@+id/tv_most"
+                           android:layout_alignParentEnd="true"
+                           android:layout_alignParentRight="true"
+                           android:backgroundTint="?attr/BackgroundColor"
+                           android:background="@drawable/bg_gradient_white" />
+
+                   </RelativeLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/view_rec"
+                   android:layout_marginBottom="5dp"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/rec"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentTop="true"
+                           android:layout_marginStart="0dp"
+                           android:layout_marginTop="0dp"
+                           android:paddingLeft="12dp"
+                           android:paddingRight="12dp"
+                           android:paddingBottom="0dp"
+                           android:text="@string/recent"
+                           android:textColor="?Titel_1"
+                           android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                           android:textStyle="bold"
+                           tools:ignore="MissingPrefix" />
+                       <View
+                           android:layout_marginRight="12dp"
+                           android:layout_marginLeft="12dp"
+                           android:layout_marginBottom="12dp"
+                           android:layout_width="55dp"
+                           android:layout_height="2dp"
+                           android:layout_below="@+id/rec"
+                           android:layout_marginTop="2dp"
+                           android:background="#BBE91E63" />
+
+                   </RelativeLayout>
+
+                   <RelativeLayout
+                       android:layout_marginBottom="5dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <androidx.recyclerview.widget.RecyclerView
+                           android:layout_marginRight="5dp"
+                           android:id="@+id/tv_rec"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"/>
+
+                       <View
+                           android:layout_width="30dp"
+                           android:layout_height="match_parent"
+                           android:layout_alignTop="@+id/tv_rec"
+                           android:layout_alignBottom="@+id/tv_rec"
+                           android:layout_alignParentEnd="true"
+                           android:layout_alignParentRight="true"
+                           android:backgroundTint="?attr/BackgroundColor"
+                           android:background="@drawable/bg_gradient_white" />
+
+                   </RelativeLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_alignParentBottom="true"
+                   android:orientation="vertical"
+                   android:id="@+id/adView"
+                   android:background="?attr/BackgroundColor"
+                   android:backgroundTint="?attr/BackgroundColor"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </LinearLayout>
+
+       </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:indeterminate="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
